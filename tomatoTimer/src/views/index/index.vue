@@ -83,10 +83,10 @@
                 b-button.index__leftContentPartBox-todoListsItem.text-left.font-weight-bold.mt-5(block v-b-toggle="'doneTodoLists'" @click="isTodoDropShow = isTodoDropShow == false ? true : false") DONE
                 // 下拉時出現
                 transition(name="doneTodoDropTurnDown")
-                  font-awesome-icon.index__leftContentPartBox-todoListsIcon.position-absolute(:icon="['fas', 'caret-down']" v-if="isTodoDropShow")
+                  font-awesome-icon.index__leftContentPartBox-todoListsIcon.position-absolute(:icon="['fas', 'caret-down']" v-if="!isDoneDropShow")
                 // 隱藏選單時出現
                 transition(name="doneTodoDropTurnUp")
-                  font-awesome-icon.index__leftContentPartBox-todoListsIcon.position-absolute(:icon="['fas', 'caret-up']" v-if="!isTodoDropShow")
+                  font-awesome-icon.index__leftContentPartBox-todoListsIcon.position-absolute(:icon="['fas', 'caret-up']" v-if="isDoneDropShow")
                 b-collapse.index__leftContentPartBox-todoListsItemContent.position-relative(id="doneTodoLists" visible)
                   .index__leftContentPartBox-todoLists.position-relative
                     .index__leftContentPartTodoList(v-for="todos in doneLists" :key="todos.id")

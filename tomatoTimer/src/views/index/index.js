@@ -4,7 +4,7 @@ export default {
         return {
             isMenuShow: false,
             isTodoDropShow: true,
-            isDoneDropShow: true,
+            isDoneDropShow: false,
             isMenuTodoShow: false,
             isMenuAnalyticsShow: false,
             isMenuRingtonesShow: false,
