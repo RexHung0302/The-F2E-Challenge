@@ -1,0 +1,649 @@
+.index {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    // 左邊區域
+    &__leftPart {
+        background-color: $Third;
+        z-index: 1;
+    }
+    &__leftPartBox {
+        position: relative;
+        // padding: 3rem 18.75rem 3rem 5.3125rem;
+        padding-top: 3rem;
+        margin: 0 10%;
+    }
+    &__leftPartMissionInsideBox {
+        position: relative;
+    }
+    &__leftPartBox-input {
+        width: 27.8125rem;
+        height: 3.5rem;
+        padding: 0 2rem 0 1rem;
+        font-weight: bold;
+        &--active {
+            color: $Secondry;
+        }
+        &--active::placeholder {
+            color: $Secondry;
+            font-weight: bold;
+            font-style: oblique;
+        }
+    }
+    &__leftPartBox-plus {
+        position: relative;
+        right: 1.625rem;
+        transition: .3s all ease;
+        transform: scale(1);
+        cursor: pointer;
+        &--active {
+            color: $Secondry;
+            &:hover {
+                opacity: 0.7;
+                transform: scale(1.5);
+            }
+        }
+    }
+    &__leftPartTitleBox {
+        position: relative;
+        padding-top: 9.0625rem;
+        display: flex;
+    }
+    &__leftPartTitleBox-leftPart {
+        flex: 0 0 10%;
+        &-circleIcon {
+            width: 3rem;
+            height: 3rem;
+            border: 0.125rem solid black;
+            border-radius: 50%;
+            transition: all .3s ease;
+            transform: scale(1);
+            cursor: pointer;
+            &:hover {
+                transform: scale(1.3);
+                background-color: #000;
+            }
+            &:active {
+                box-shadow: 1px 1px 3px 2px rgba(20%, 20%, 40%, 0.5) inset;
+                background-color: #000;
+                transform: scale(1);
+            }
+            &--done {
+                transition: all .3s ease;
+                background-color: #000;
+            }
+        }
+    }
+    &__leftPartTitleBox-rightPart {
+        flex: 0 0 90%;
+        padding-left: 1rem;
+        text-align: left;
+        &-title {
+            transition: all .3s ease;
+            font-size: 1.5rem;
+            font-weight: bold;
+            &--done {
+                transition: all .3s ease;
+                text-decoration: line-through;
+                color: #ccc;
+            }
+        }
+        &-tomatoBox {
+            padding-top: 0.375rem;
+        }
+        &-tomatoImg {
+            width: 20px;
+            padding-right: 0.5rem;
+            &:last-child {
+                padding-right: 0;
+            }
+        }
+    }
+    &__leftPartTimeBox {
+        text-align: left;
+        min-height: 12.875rem;
+        min-width: 28.375rem;
+        font-size: 11rem;
+    }
+    &__leftPartTime {
+        font-weight: bold;
+        padding: 0.625rem;
+        &--active {
+            color: $Secondry;
+        }
+    }
+    &__leftPartTodoListBox {
+        position: relative;
+        width: 27.8125rem;
+        bottom: 0;
+        padding-bottom: 3rem;
+        font-weight: bold;
+        text-align: left;
+    }
+    &__leftPartTodoList {
+        width: 100%;
+        padding-bottom: 0.625rem;
+        margin-bottom: 1.375rem;
+        border-bottom: 1px solid #ccc;
+    }
+    &__leftPartTodoSpan {
+        padding-left: 1.25rem;
+        transition: all .3s ease;
+        &--done {
+            text-decoration: line-through;
+            color: #ccc;
+        }
+    }
+    &__leftPartPlayIcon {
+        position: absolute;
+        right: 0;
+        width: 1.5rem!important;
+        height: 1.5rem!important;
+        cursor: pointer;
+        transform: scale(1);
+        transition: all .3s ease;
+        &:hover {
+            transform: scale(1.5);
+        }
+        &:active {
+            transform: scale(1);
+        }
+    }
+    &__leftPartTodoMore {
+        color: $Secondry;
+        font-size: 1rem;
+        font-weight: bold;
+        text-align: right;
+    }
+    &__leftPartTodoMore-span {
+        transition: all .3s ease;
+        transform: scale(1);
+        cursor: pointer;
+        &:hover {
+            color: #d6a8b8;
+            transform: scale(1.2);
+        }
+        &::after {
+            content: "⬇︎";
+            position: absolute;
+            right: 40px;
+        }
+    }
+    // 右邊區域
+    &__rightPart {
+        text-align: right;
+    }
+    &__rightPartIconBox {
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        width: 100%;
+    }
+    &__rightPartIconBox-icon {
+        height: 2.25rem;
+        font-size: 1.5rem;
+        padding: 3rem 0;
+        cursor: pointer;
+        transition: all .5s ease;
+        transform: scale(1);
+        &:hover {
+            transform: scale(1.3);
+        }
+        &:active {
+            transform: scale(1);
+        }
+    }
+    &__rightPartTextBox {
+        font-size: 1.5rem;
+        color: #fff;
+        text-align: right;
+        &-span {
+            writing-mode: tb;
+            padding-bottom: 3rem;
+        }
+    }
+    /* 時鐘 */
+    &__TimeBox {
+        top: 50%;
+        right: 0;
+        width: 70%;
+        max-width: 31.25rem;
+        max-height: 31.25rem;
+        transform: translate(50%, -50%);
+        .timeBox {
+            width: 31.25rem;
+            height: 31.25rem;
+            &__insideBox {
+                width: 31.25rem;
+                height: 31.25rem;
+                border-radius: 50%;
+                border: 0.3125rem solid $Secondry;
+                box-sizing: border-box;
+            }
+            &__buttonBox {
+                margin: 0 auto;
+                width: 28.125rem;
+                height: 28.125rem;
+                background-color: $Secondry;
+                border-radius: 50%;
+                z-index: 1;
+                top: 1.25rem;
+                &-button {
+                    width: 6rem;
+                    height: 6rem;
+                    background-color: #fff;
+                    border-radius: 50%;
+                    z-index: 2;
+                    top: 40%;
+                    margin: 0 auto;
+                    cursor: pointer;
+                    transition: all .5s ease;
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        border-top: 1.25rem solid white;
+                        border-bottom: 1.25rem solid white;
+                        border-left: 1.875rem solid $Secondry;
+                        display: inline-block;
+                        top: 50%;
+                        left: 40%;
+                        margin-top: -1.25rem;
+                    }
+                }
+                &-endButton {
+                    width: 1rem;
+                    height: 1rem;
+                    background-color: white;
+                    right: -0.9375rem;
+                    bottom: 0;
+                    cursor: pointer;
+                    transition: all .5s ease;
+                    transform: scale(1);
+                    &:hover {
+                        transform: scale(1.5);
+                    }
+                    &:active {
+                        transform: scale(1);
+                    }
+                }
+            }
+        }
+    }
+    // menu 頁面左邊區塊
+    &__leftMenuPart {
+        padding-top: 2.8125rem;
+        padding-left: 5.3125rem;
+    }
+    &__leftMenuPartBox {}
+    &__leftMenuList {
+        color: #ffffff4d;
+        font-size: 2.25rem;
+        list-style: none;
+        &-item {
+            font-weight: bold;
+            margin-bottom: 2.625rem;
+            cursor: pointer;
+            transition: all .3s ease;
+            transform: scale(1);
+            &:hover {
+                color: #fff;
+                transform: scale(1.2);
+            }
+            &:active {
+                transform: scale(1);
+            }
+            &--active {
+                color: $Secondry;
+            }
+        }
+    }
+    // menu Add list input
+    &__leftContentPartMissionInsideBox {
+        position: relative;
+    }
+    &__leftContentPartBox-input {
+        width: 100%;
+        height: 3.5rem;
+        padding: 0 2rem 0 1rem;
+        font-weight: bold;
+        margin-bottom: 3rem;
+        &--active {
+            color: $Secondry;
+        }
+        &--active::placeholder {
+            color: $Secondry;
+            font-weight: bold;
+            font-style: oblique;
+        }
+    }
+    &__leftContentPartBox-plus {
+        position: absolute;
+        right: 0.625rem;
+        top: 1.25rem;
+        transition: .3s all ease;
+        transform: scale(1);
+        cursor: pointer;
+        &--active {
+            color: $Secondry;
+            &:hover {
+                opacity: 0.7;
+                transform: scale(1.5);
+            }
+        }
+    }
+    // menu 頁面的 todo-list
+    &__leftContentPartBox {
+        position: relative;
+        font-weight: bold;
+        color: #fff;
+        &-todoListsItem {
+            border: 0!important;
+            background-color: #ffffff33!important;
+            font-size: 1.5rem!important;
+            border-radius: 0!important;
+            height: 2.75rem;
+            transition: all .3s ease;
+            &:hover {
+                background-color: #ffffff80!important;
+            }
+        }
+        &-todoListsIcon {
+            right: 1rem;
+            top: 1rem;
+        }
+        &-todoLists {
+            padding-top: 1rem;
+            max-height: 250px;
+            overflow-y: scroll;
+        }
+    }
+    &__leftContentPartTodoList {
+        width: 100%;
+        padding-bottom: 0.625rem;
+        margin-bottom: 1.375rem;
+        border-bottom: 1px solid #ccc;
+    }
+    &__leftContentPartTodoSpan {
+        padding-left: 1.25rem;
+        transition: all .3s ease;
+        &--done {
+            text-decoration: line-through;
+            color: #ccc;
+        }
+    }
+    &__leftContentPartPlayIcon {
+        position: absolute;
+        right: 0;
+        width: 1.5rem!important;
+        height: 1.5rem!important;
+        cursor: pointer;
+        transform: scale(1);
+        transition: all .3s ease;
+        &:hover {
+            transform: scale(1.5);
+        }
+        &:active {
+            transform: scale(1);
+        }
+    }
+    &__leftContentPartCircleIcon {
+        width: 1.5rem;
+        height: 1.5rem;
+        border: 2px solid white;
+        border-radius: 50%;
+        transition: all .3s ease;
+        transform: scale(1);
+        cursor: pointer;
+        &:hover {
+            transform: scale(1.3);
+            background-color: #fff;
+        }
+        &:active {
+            box-shadow: 1px 1px 3px 2px rgba(20%, 20%, 40%, 0.5) inset;
+            background-color: #fff;
+            transform: scale(1);
+        }
+        &-done {
+            transition: all .3s ease;
+            background-color: #fff;
+        }
+    }
+    // MENU ANALYTICS
+    &__itemTitle {
+        background-color: #ffffff33;
+        height: 44px;
+        font-size: 24px;
+        padding: 6px 16px;
+    }
+    &__itemTomatoNum {
+        font-size: 64px;
+        color: #FF4384;
+    }
+    &__itemTomatoText {
+        font-size: 16px;
+        color: #ffffff4d;
+    }
+}
+
+.circleIcon {
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 2px solid black;
+    border-radius: 50%;
+    transition: all .3s ease;
+    transform: scale(1);
+    cursor: pointer;
+    &:hover {
+        transform: scale(1.3);
+        background-color: #000;
+    }
+    &:active {
+        box-shadow: 1px 1px 3px 2px rgba(20%, 20%, 40%, 0.5) inset;
+        background-color: #000;
+        transform: scale(1);
+    }
+    &-done {
+        transition: all .3s ease;
+        background-color: #000;
+    }
+}
+
+.d-inline-block {
+    display: inline-block;
+}
+
+
+/* Animation for menu slide */
+
+.slide-enter-active,
+.slide-leave-active {
+    transition: all .8s;
+}
+
+.slide-enter {
+    opacity: 0;
+    transform: translateX(-100%);
+}
+
+.slide-enter-to {
+    opacity: 1;
+    transform: translateX(0%);
+}
+
+.slide-leave {
+    opacity: 1;
+}
+
+.slide-leave-to {
+    opacity: 0;
+    transform: translateX(-100%);
+}
+
+
+/* Animation for fade */
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity .5s;
+}
+
+.fade-enter,
+.fade-leave-to
+/* .fade-leave-active below version 2.1.8 */
+
+{
+    opacity: 0;
+}
+
+
+/* Animation for menu fade */
+
+.menuFade-enter-active,
+.menuFade-leave-active {
+    transition: opacity .5s;
+}
+
+.menuFade-enter,
+.menuFade-leave-to
+/* .fade-leave-active below version 2.1.8 */
+
+{
+    opacity: 0;
+}
+
+
+/* Animation for todoDropTurn down */
+
+.todoDropTurnDown-enter-active,
+.todoDropTurnDown-leave-active {
+    transition: all .3s;
+}
+
+.todoDropTurnDown-enter {
+    opacity: 0;
+    transform: rotate(-180deg);
+}
+
+.todoDropTurnDown-enter-to {
+    opacity: 1;
+    transform: rotate(0deg);
+}
+
+.todoDropTurnDown-leave {
+    opacity: 0;
+    transform: rotate(0deg);
+}
+
+.todoDropTurnDown-leave-to {
+    transform: rotate(-180deg);
+}
+
+
+/* Animation for todoDropTurn up */
+
+.todoDropTurnUp-enter-active,
+.todoDropTurnUp-leave-active {
+    transition: all .3s;
+}
+
+.todoDropTurnUp-enter {
+    opacity: 0;
+    transform: rotate(0deg);
+}
+
+.todoDropTurnUp-enter-to {
+    opacity: 1;
+    transform: rotate(-180deg);
+}
+
+.todoDropTurnUp-leave {
+    opacity: 0;
+    transform: rotate(-180deg);
+}
+
+.todoDropTurnUp-leave-to {
+    transform: rotate(0deg);
+}
+
+
+/* Animation for doneTodoDropTurn down */
+
+.doneTodoDropTurnDown-enter-active,
+.doneTodoDropTurnDown-leave-active {
+    transition: all .3s;
+}
+
+.doneTodoDropTurnDown-enter {
+    opacity: 0;
+    transform: rotate(-180deg);
+}
+
+.doneTodoDropTurnDown-enter-to {
+    opacity: 1;
+    transform: rotate(0deg);
+}
+
+.doneTodoDropTurnDown-leave {
+    opacity: 0;
+    transform: rotate(0deg);
+}
+
+.doneTodoDropTurnDown-leave-to {
+    transform: rotate(-180deg);
+}
+
+
+/* Animation for doneTodoDropTurn up */
+
+.doneTodoDropTurn-enter-active,
+.doneTodoDropTurn-leave-active {
+    transition: all .3s;
+}
+
+.doneTodoDropTurn-enter {
+    opacity: 0;
+    transform: rotate(0deg);
+}
+
+.doneTodoDropTurn-enter-to {
+    opacity: 1;
+    transform: rotate(-180deg);
+}
+
+.doneTodoDropTurn-leave {
+    opacity: 0;
+    transform: rotate(-180deg);
+}
+
+.doneTodoDropTurn-leave-to {
+    transform: rotate(0deg);
+}
+
+
+/* Animation for menuItemFade */
+
+.menuItemFade-enter-active,
+.menuItemFade-leave-active {
+    transition: all .5s;
+}
+
+.menuItemFade-enter {
+    opacity: 0;
+    transform: rotate3d(1, 1, 1, 0deg);
+}
+
+.menuItemFade-enter-to {
+    opacity: 1;
+    transform: rotate3d(1, 1, 1, 360deg);
+}
+
+.menuItemFade-leave {
+    opacity: 0;
+    transform: rotate3d(1, 1, 1, 360deg);
+}
+
+.menuItemFade-leave-to {
+    opacity: 1;
+    transform: rotate3d(1, 1, 1, 0deg);
+}
