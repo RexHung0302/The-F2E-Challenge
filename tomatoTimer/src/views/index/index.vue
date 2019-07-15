@@ -32,7 +32,7 @@
                 span.index__leftPartTodoSpan.index__leftPartTodoSpan--done(v-else) {{ todos.content }}
               font-awesome-icon.index__leftPartPlayIcon(:icon="['fa', 'play-circle']")
             .index__leftPartTodoMore
-              span.index__leftPartTodoMore-span(v-if="!isMenuShow" @click="isMenuShow = isMenuShow == false ? true : false") More
+              span.index__leftPartTodoMore-span(v-if="!isMenuShow" @click="dropMenuHandler('todo')") More
         .index__TimeBox.position-absolute
             .timeBox.position-relative
               .timeBox__insideBox.position-relative
