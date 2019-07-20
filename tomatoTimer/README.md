@@ -1,6 +1,6 @@
 # 第一週 - TomatoTimer 番茄鐘
 
-### Demo
+### 範例
 
 <a href="https://rexhung0302.github.io/The-F2E-Challenge/tomatoTimer/dist/index.html#/index">DOMO</a>
 
