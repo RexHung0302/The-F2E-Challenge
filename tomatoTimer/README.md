@@ -9,9 +9,9 @@
 第一週先當成切版練習(雖然這次來參加主要是想練習切版)，希望下週開始狀態能好轉。
 
 ### 使用套件
-<a href="https://fontawesome.com/?from=io">fortawesome & font-awesome</a> Icon
-<a href="https://vue-chartjs.org/">vue-chart.js & awesome-charts</a> 圖表
-<a href="https://bootstrap-vue.js.org/">bootstrap-vue Modules</a>
+<a href="https://fontawesome.com/?from=io">fortawesome & font-awesome</a> Icon<br/> 
+<a href="https://vue-chartjs.org/">vue-chart.js & awesome-charts</a> 圖表<br/>
+<a href="https://bootstrap-vue.js.org/">bootstrap-vue</a> Modules<br/>
 
 ### CSS 規範
 1. SMASS 增加子模組 增加重複使用性
