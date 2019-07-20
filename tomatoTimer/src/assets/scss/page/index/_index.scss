@@ -445,6 +445,12 @@
         font-size: 16px;
         color: #ffffff4d;
     }
+    // 鈴聲頁面
+    &__ringtonesBox {
+        .form-check.form-check-inline {
+            margin: 10px!important;
+        }
+    }
 }
 
 .circleIcon {

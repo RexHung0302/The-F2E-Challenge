@@ -112,22 +112,24 @@
                     span.index__itemTomatoNum.font-weight-bold 108
                     span.index__itemTomatoText.font-weight-bold.pl-2 / TOMATO
                 .index__itemTitle.font-weight-bold.text-left CHART
+                  .small
+                    line-chart(:chartData="chartApi")
           // RINGTONES
           transition(name="menuItemFade" mode="out-in")
             .index__leftContentPartBox.position-relative.col-6(v-if="isMenuRingtonesShow")
               .index__ringtonesBox.position-relative.w-100
                 .index__itemTitle.font-weight-bold.text-left.pb-3 WORK
                 b-form-radio-group.pt-4.pb-5(
-                  v-model="selected"
-                  :options="options" 
+                  v-model="workSelected"
+                  :options="workOptions" 
                   plain
                   name="plain-inline")
                 .index__itemTitle.font-weight-bold.text-left.pb-3 BREAK
                 b-form-radio-group.pt-4(
-                  v-model="selected"
-                  :options="options"
+                  v-model="breakSelected"
+                  :options="breakOptions"
                   plain
-                  name="plain-inline2")      
+                  name="breakSelect")      
     // 右邊區塊          
     transition(name="fade" mode="out-in")
       .index__rightPart.col
@@ -148,3 +150,13 @@
 </template>
 
 <script src="./index.js"></script>
+
+<style lang="scss" scoped>
+  .small {
+    max-width: 400px;
+    max-height: 300px;
+    margin:  10px auto;
+  }
+  
+</style>
+

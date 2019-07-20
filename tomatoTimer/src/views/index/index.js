@@ -1,5 +1,10 @@
+import LineChart from '../../components/chart/chart.vue'
+
 export default {
     name: "index",
+    components: {
+        LineChart,
+    },
     data() {
         return {
             isMenuShow: false,
@@ -22,13 +27,51 @@ export default {
                 ringtones: 'index__leftMenuList-item'
             },
             // 鈴聲選擇
-            selected: [], // Must be an array reference!
-            options: [
-                { text: 'Orange', value: 'orange' },
-                { text: 'Apple', value: 'apple' },
-                { text: 'Pineapple', value: 'pineapple' },
-                { text: 'Grape', value: 'grape' }
-            ]
+            workSelected: '0',
+            workOptions: [
+                { text: 'NONE', value: '0' },
+                { text: 'Default', value: '1' },
+                { text: 'ALARM', value: '2' },
+                { text: 'ALERT', value: '3' },
+                { text: 'BEEP', value: '4' },
+                { text: 'BELL', value: '5' },
+                { text: 'BIRD', value: '6' },
+                { text: 'BUGLE', value: '7' },
+                { text: 'DIGITAL', value: '8' },
+                { text: 'DROP', value: '9' },
+                { text: 'HORN', value: '10' },
+                { text: 'MUSIC', value: '11' },
+                { text: 'RING', value: '12' },
+                { text: 'WARNING', value: '13' },
+                { text: 'WHISTLE', value: '14' }
+            ],
+            breakSelected: '0',
+            breakOptions: [
+                { text: 'NONE', value: '0' },
+                { text: 'Default', value: '1' },
+                { text: 'ALARM', value: '2' },
+                { text: 'ALERT', value: '3' },
+                { text: 'BEEP', value: '4' },
+                { text: 'BELL', value: '5' },
+                { text: 'BIRD', value: '6' },
+                { text: 'BUGLE', value: '7' },
+                { text: 'DIGITAL', value: '8' },
+                { text: 'DROP', value: '9' },
+                { text: 'HORN', value: '10' },
+                { text: 'MUSIC', value: '11' },
+                { text: 'RING', value: '12' },
+                { text: 'WARNING', value: '13' },
+                { text: 'WHISTLE', value: '14' }
+            ],
+            // Chart
+            chartApi: {
+                labels: ['19/07/20', '19/07/21', '19/07/22', '19/07/23', '19/07/24', '19/07/25', '19/07/26'],
+                datasets: [{
+                    label: 'Tomato Count',
+                    backgroundColor: '#fff',
+                    data: [16, 5, 10, 18, 20, 7, 24]
+                }],
+            },
         }
     },
     methods: {
@@ -75,7 +118,7 @@ export default {
         },
         checkDone: function(obj) {
             return obj.isDone === true;
-        }
+        },
     },
     computed: {
         // 尚未完成的
