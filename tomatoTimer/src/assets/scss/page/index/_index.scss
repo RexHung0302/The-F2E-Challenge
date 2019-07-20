@@ -275,6 +275,7 @@
     }
     // menu 頁面左邊區塊
     &__leftMenuPart {
+        z-index: 1;
         padding-top: 2.8125rem;
         padding-left: 5.3125rem;
     }
@@ -340,6 +341,10 @@
         position: relative;
         font-weight: bold;
         color: #fff;
+        &-todoListsInsideBox {
+            min-height: 200px;
+            max-height: 200px;
+        }
         &-todoListsItem {
             position: relative;
             border: 0!important;
@@ -357,8 +362,8 @@
             top: 1rem;
         }
         &-todoLists {
-            margin-top: 0.2rem;
-            max-height: 250px;
+            margin-top: 0.3rem;
+            max-height: 180px;
             overflow-y: scroll;
             padding: 10px;
             &::-webkit-scrollbar {
@@ -501,14 +506,22 @@
 
 .fade-enter-active,
 .fade-leave-active {
-    transition: opacity .8s;
+    transition: all .8s;
 }
 
-.fade-enter,
-.fade-leave-to
-/* .fade-leave-active below version 2.1.8 */
+.fade-enter {
+    opacity: 0;
+}
 
-{
+.fade-enter-to {
+    opacity: 1;
+}
+
+.fade-leave {
+    opacity: 1;
+}
+
+.fade-leave-to {
     opacity: 0;
 }
 
