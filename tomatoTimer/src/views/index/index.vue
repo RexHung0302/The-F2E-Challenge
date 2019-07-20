@@ -8,30 +8,29 @@
           .index__leftPartMissionInsideBox.text-left
             input.index__leftPartBox-input.index__leftPartBox-input--active(v-model.trim="newTodo" placeholder="ADD A NEW MISSION" @keyup.enter="addTodoHandler")
             font-awesome-icon.index__leftPartBox-plus.index__leftPartBox-plus--active(:icon="['fa', 'plus']" @click="addTodoHandler")
-          .index__leftPartTitleBox
+          .index__leftPartTitleBox(v-if="nonDoneLists.length")
             .index__leftPartTitleBox-leftPart
-              .index__leftPartTitleBox-leftPart-circleIcon(v-if="!lists[0].isDone" @click="lists[0].isDone = lists[0].isDone == false ? true : false")
-              .index__leftPartTitleBox-leftPart-circleIcon.index__leftPartTitleBox-leftPart-circleIcon--done(v-else @click="lists[0].isDone = lists[0].isDone == false ? true : false")
+              .index__leftPartTitleBox-leftPart-circleIcon(@click="nonDoneLists[0].isDone = nonDoneLists[0].isDone == false ? true : false")
             .index__leftPartTitleBox-rightPart
-              .index__leftPartTitleBox-rightPart-title(v-if="!lists[0].isDone")
-                span {{ lists[0].content }}
-              .index__leftPartTitleBox-rightPart-title.index__leftPartTitleBox-rightPart-title--done(v-if="lists[0].isDone")
-                span {{ lists[0].content }}  
+              .index__leftPartTitleBox-rightPart-title(v-if="nonDoneLists")
+                span {{ nonDoneLists[0].content }}
               .index__leftPartTitleBox-rightPart-tomatoBox
                 img.index__leftPartTitleBox-rightPart-tomatoImg(src="../../assets/img/tomato.png")
                 img.index__leftPartTitleBox-rightPart-tomatoImg(src="../../assets/img/tomato.png")
                 img.index__leftPartTitleBox-rightPart-tomatoImg(src="../../assets/img/tomato.png")
-          .index__leftPartTimeBox
+          .index__leftPartTitleBox(v-if="!nonDoneLists.length")
+            span.index__leftPartTitleBox-remindText.font-weight-bold You Need Add A Task.     
+          .index__leftPartTimeBox(v-if="nonDoneLists.length")
             .index__leftPartTime.index__leftPartTime--active 25:00
           .index__leftPartTodoListBox
-            .index__leftPartTodoList(v-for="todos in threeLists" :key="todos.id")
+            .index__leftPartTodoList(v-for="todos in nonDoneLists.slice(1,3)" :key="todos.id")
               .circleIcon.d-inline-block(v-if="!todos.isDone" @click="todos.isDone = todos.isDone == false ? true : false")
               .circleIcon.circleIcon-done.d-inline-block(v-if="todos.isDone" @click="todos.isDone = todos.isDone == false ? true : false")
               transition(name="fade")
                 span.index__leftPartTodoSpan(v-if="!todos.isDone") {{ todos.content }}
                 span.index__leftPartTodoSpan.index__leftPartTodoSpan--done(v-else) {{ todos.content }}
               font-awesome-icon.index__leftPartPlayIcon(:icon="['fa', 'play-circle']")
-            .index__leftPartTodoMore
+            .index__leftPartTodoMore(v-if="nonDoneLists.length > 3")
               span.index__leftPartTodoMore-span(v-if="!isMenuShow" @click="dropMenuHandler('todo')") More
         .index__TimeBox.position-absolute
             .timeBox.position-relative
@@ -42,7 +41,7 @@
     // Menu 區塊
     transition(name="fade")
     .index__leftMenuPart.position-relative.col-9(v-if="isMenuShow")
-      .row.no-gutters
+      .row.no-gutters.pl-4
         .index__leftMenuPartBox.col-6
           ul.index__leftMenuList.text-left
             li(:class="className.todo" @click="selectMenuList('todo')")
@@ -62,40 +61,42 @@
               input.index__leftContentPartBox-input.index__leftContentPartBox-input--active(v-model.trim="newTodo" placeholder="ADD A NEW MISSION" @keyup.enter="addTodoHandler")
               font-awesome-icon.index__leftContentPartBox-plus.index__leftContentPartBox-plus--active(:icon="['fa', 'plus']" @click="addTodoHandler")
               .index__leftContentPartBox-todoListsBox.position-relative
-                b-button.index__leftContentPartBox-todoListsItem.text-left.font-weight-bold(block v-b-toggle="'todoLists'" @click="isTodoDropShow = isTodoDropShow == false ? true : false") TO-DO
-                // 下拉時出現
-                transition(name="todoDropTurnDown")
-                  font-awesome-icon.index__leftContentPartBox-todoListsIcon.position-absolute(:icon="['fas', 'caret-down']" v-if="isTodoDropShow")
-                // 隱藏選單時出現
-                transition(name="todoDropTurnUp")
-                  font-awesome-icon.index__leftContentPartBox-todoListsIcon.position-absolute(:icon="['fas', 'caret-up']" v-if="!isTodoDropShow")
-                // TO-DO  
-                b-collapse.index__leftContentPartBox-todoListsItemContent.position-relative(id="todoLists" visible)
-                  .index__leftContentPartBox-todoLists.position-relative
-                    .index__leftContentPartTodoList(v-for="todos in lists" :key="todos.id")
-                      .index__leftContentPartCircleIcon.d-inline-block(v-if="!todos.isDone" @click="todos.isDone = todos.isDone == false ? true : false")
-                      .index__leftContentPartCircleIcon.index__leftContentPartCircleIcon-done.d-inline-block(v-if="todos.isDone" @click="todos.isDone = todos.isDone == false ? true : false")
-                      transition(name="fade")
-                        span.index__leftContentPartTodoSpan(v-if="!todos.isDone") {{ todos.content }}
-                        span.index__leftContentPartTodoSpan.index__leftContentPartTodoSpan--done(v-else) {{ todos.content }}
-                      font-awesome-icon.index__leftContentPartPlayIcon(:icon="['fa', 'play-circle']")
-                // Done TO-DO      
-                b-button.index__leftContentPartBox-todoListsItem.text-left.font-weight-bold.mt-5(block v-b-toggle="'doneTodoLists'" @click="isTodoDropShow = isTodoDropShow == false ? true : false") DONE
-                // 下拉時出現
-                transition(name="doneTodoDropTurnDown")
-                  font-awesome-icon.index__leftContentPartBox-todoListsIcon.position-absolute(:icon="['fas', 'caret-down']" v-if="!isDoneDropShow")
-                // 隱藏選單時出現
-                transition(name="doneTodoDropTurnUp")
-                  font-awesome-icon.index__leftContentPartBox-todoListsIcon.position-absolute(:icon="['fas', 'caret-up']" v-if="isDoneDropShow")
-                b-collapse.index__leftContentPartBox-todoListsItemContent.position-relative(id="doneTodoLists" visible)
-                  .index__leftContentPartBox-todoLists.position-relative
-                    .index__leftContentPartTodoList(v-for="todos in doneLists" :key="todos.id")
-                      .index__leftContentPartCircleIcon.d-inline-block(v-if="!todos.isDone" @click="todos.isDone = todos.isDone == false ? true : false")
-                      .index__leftContentPartCircleIcon.index__leftContentPartCircleIcon-done.d-inline-block(v-if="todos.isDone" @click="todos.isDone = todos.isDone == false ? true : false")
-                      transition(name="fade")
-                        span.index__leftContentPartTodoSpan(v-if="!todos.isDone") {{ todos.content }}
-                        span.index__leftContentPartTodoSpan.index__leftContentPartTodoSpan--done(v-else) {{ todos.content }}
-                      font-awesome-icon.index__leftContentPartPlayIcon(:icon="['fa', 'play-circle']") 
+                .position-relative
+                  b-button.index__leftContentPartBox-todoListsItem.text-left.font-weight-bold(block v-b-toggle="'todoLists'" @click="isTodoDropShow = isTodoDropShow == false ? true : false") TO-DO
+                  // 下拉時出現
+                  transition(name="todoDropTurnDown")
+                    font-awesome-icon.index__leftContentPartBox-todoListsIcon.position-absolute(:icon="['fas', 'caret-down']" v-if="isTodoDropShow")
+                  // 隱藏選單時出現
+                  transition(name="todoDropTurnUp")
+                    font-awesome-icon.index__leftContentPartBox-todoListsIcon.position-absolute(:icon="['fas', 'caret-up']" v-if="!isTodoDropShow")
+                  // TO-DO  
+                  b-collapse.index__leftContentPartBox-todoListsItemContent.position-relative(id="todoLists" visible)
+                    .index__leftContentPartBox-todoLists.position-relative
+                      .index__leftContentPartTodoList(v-for="todos in nonDoneLists" :key="todos.id")
+                        .index__leftContentPartCircleIcon.d-inline-block(v-if="!todos.isDone" @click="todos.isDone = todos.isDone == false ? true : false")
+                        .index__leftContentPartCircleIcon.index__leftContentPartCircleIcon-done.d-inline-block(v-if="todos.isDone" @click="todos.isDone = todos.isDone == false ? true : false")
+                        transition(name="fade")
+                          span.index__leftContentPartTodoSpan(v-if="!todos.isDone") {{ todos.content }}
+                          span.index__leftContentPartTodoSpan.index__leftContentPartTodoSpan--done(v-else) {{ todos.content }}
+                        font-awesome-icon.index__leftContentPartPlayIcon(:icon="['fa', 'play-circle']")
+                // Done TO-DO 
+                .position-relative 
+                  b-button.index__leftContentPartBox-todoListsItem.text-left.font-weight-bold.mt-5(block v-b-toggle="'doneTodoLists'" @click="isDoneDropShow = isDoneDropShow == false ? true : false") DONE
+                  // 下拉時出現
+                  transition(name="doneTodoDropTurnDown")
+                    font-awesome-icon.index__leftContentPartBox-todoListsIcon.position-absolute(:icon="['fas', 'caret-down']" v-if="!isDoneDropShow")
+                  // 隱藏選單時出現
+                  transition(name="doneTodoDropTurnUp")
+                    font-awesome-icon.index__leftContentPartBox-todoListsIcon.position-absolute(:icon="['fas', 'caret-up']" v-if="isDoneDropShow")
+                  b-collapse.index__leftContentPartBox-todoListsItemContent.position-relative(id="doneTodoLists")
+                    .index__leftContentPartBox-todoLists.position-relative
+                      .index__leftContentPartTodoList(v-for="(todos,index) in doneLists" :key="index")
+                        .index__leftContentPartCircleIcon.d-inline-block(v-if="!todos.isDone" @click="todos.isDone = todos.isDone == false ? true : false")
+                        .index__leftContentPartCircleIcon.index__leftContentPartCircleIcon-done.d-inline-block(v-if="todos.isDone" @click="todos.isDone = todos.isDone == false ? true : false")
+                        transition(name="fade")
+                          span.index__leftContentPartTodoSpan(v-if="!todos.isDone") {{ todos.content }}
+                          span.index__leftContentPartTodoSpan.index__leftContentPartTodoSpan--done(v-else) {{ todos.content }}
+                        font-awesome-icon.index__leftContentPartPlayIcon(:icon="['fa', 'play-circle']") 
         // ANALYTICS
         transition(name="menuItemFade")
           .index__leftContentPartBox.position-relative.col-6(v-if="isMenuAnalyticsShow")

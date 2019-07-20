@@ -16,10 +16,6 @@ export default {
                 { 'id': 4, 'index': 4, 'content': 'The Forth Thing To Do Today.', 'isDone': false },
                 { 'id': 5, 'index': 5, 'content': 'The Fiveth Thing To Do Today.', 'isDone': true }
             ],
-            doneLists: [
-                { 'id': 3, 'index': 3, 'content': 'The Third Thing To Do Today.', 'isDone': true },
-                { 'id': 5, 'index': 5, 'content': 'The Fiveth Thing To Do Today.', 'isDone': true }
-            ],
             className: {
                 todo: 'index__leftMenuList-item',
                 analytics: 'index__leftMenuList-item',
@@ -76,19 +72,44 @@ export default {
                     this.isMenuRingtonesShow = true;
                     break;
             }
+        },
+        checkDone: function(obj) {
+            return obj.isDone === true;
         }
     },
     computed: {
-        // 取出第二個開始的前三個
-        threeLists: function() {
+        // 尚未完成的
+        nonDoneLists: function() {
 
-            var threeLists = [];
+            var vm = this;
 
-            for (var i = 1; i < 4; i++) {
-                threeLists.push(this.lists[i])
-            }
+            var mynonDoneLists = [];
 
-            return threeLists;
+            vm.lists.map(function(obj) {
+
+                if (obj.isDone === false) {
+
+                    mynonDoneLists.push(obj);
+                }
+            })
+
+            return mynonDoneLists;
+        },
+        // 已完成的
+        doneLists: function() {
+
+            var vm = this;
+
+            var myDoneLists = [];
+
+            vm.lists.map(function(obj) {
+
+                if (obj.isDone === true) {
+                    myDoneLists.push(obj);
+                }
+            })
+
+            return myDoneLists;
         }
     }
-};
+}
