@@ -8,8 +8,8 @@
 ```
 1. $ Git Clone
 2. $ cd The-F2E-Challenge/tomatoTimer
-3. npm install or yarn install
-4. npm run serve / yarn serve
+3. $ npm install or $ yarn install
+4. $ npm run serve or $ yarn serve
 ```
 
 ### 測試
