@@ -1,0 +1,26 @@
+.index {
+    background-color: $Primary;
+    color: #fff;
+    &__logo {
+        padding: 10rem 0 4.375rem;
+    }
+    &__startBtn {
+        width: 22.5rem;
+        height: 3.75rem;
+        margin: 0 auto;
+        line-height: 1.875rem;
+        background-color: $Secondry;
+        border: 0.1875rem solid $Secondry;
+        color: $Primary;
+        border-radius: 0.625rem;
+        font-size: 2.25rem;
+        transition: all .3s;
+        &:hover {
+            background-color: $Primary;
+            color: $Secondry;
+        }
+        &:active {
+            box-shadow: 1px 1px 5px 4px rgba(255, 255, 255, 0.5) inset;
+        }
+    }
+}

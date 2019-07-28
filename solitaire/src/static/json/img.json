@@ -1,0 +1,9 @@
+{
+    "images": [{
+            "src": "/assets/img/card/poker-c01.svg'"
+        },
+        {
+            "src": "../assets/img/card/poker-c02.svg"
+        }
+    ]
+}

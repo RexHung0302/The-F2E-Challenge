@@ -1,0 +1,18 @@
+.bgPrimary {
+    background-color: $Primary;
+}
+
+.bgSecondry {
+    background-color: $Secondry;
+}
+
+.bgThird {
+    background-color: $Third;
+}
+
+
+/* 共同 Class & 全域 CSS */
+
+#app {
+    height: 100vh;
+}

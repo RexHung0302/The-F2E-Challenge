@@ -29,5 +29,5 @@
 
 ### 測試
 ```
-yarn run test
+$ yarn run test
 ```
