@@ -1,0 +1,111 @@
+.sideBar {
+    max-width: 179px;
+    border-bottom-right-radius: 1.875rem;
+    box-shadow: 0.25rem 0.25rem 0.75rem 0.125rem rgba(20%, 20%, 40%, 0.5);
+    color: $Primary;
+    transition: all .5s;
+    transform: translateX(0px);
+    // 漢堡鈕
+    .hamburgerBtn {
+        right: 10px;
+        top: 10px;
+        font-size: 22px;
+        cursor: pointer;
+        transition: all .3s;
+        z-index: 2;
+        &:hover {
+            color: $SecondaryPrimary;
+        }
+    }
+    // 左上方個人資料區塊
+    &__profileBox {
+        padding: 2.5625rem 0 1.25rem;
+        // 大頭照
+        .profile__imgBox {
+            width: 3.125rem;
+            height: 3.125rem;
+            margin: 0 auto;
+            background-color: $Primary;
+            overflow: hidden;
+            transition: all .3s;
+            transform: scale(1);
+            cursor: pointer;
+            &:hover {
+                transform: scale(1.2);
+            }
+            &:active {
+                transform: scale(1);
+            }
+        }
+        // 個人姓名
+        .profile__name {
+            padding-top: 0.625rem;
+            font-size: 0.75rem;
+        }
+        // 登出按鈕
+        .profile__logOutBtn {
+            width: 4.125rem;
+            height: 1.5625rem;
+            line-height: 1.5625rem;
+            margin-top: 0.625rem;
+            background-color: #ffffff4d;
+            border: 0;
+            color: $Primary;
+            border-radius: 0.8125rem;
+            font-size: 0.75rem;
+            transition: all .3s;
+            &:hover {
+                background-color: $Primary;
+                color: $SecondaryPrimary;
+            }
+        }
+    }
+    // 左側首頁開始的選項欄位區塊
+    &__itemBox {
+        // 每一個 sideBar 選項
+        .itemBox__title {
+            padding-bottom: 12px;
+            padding-left: 31px; // 必須放這邊背景才吃得到 100%
+            height: 50px;
+            line-height: 50px;
+            .title__span {
+                font-size: 24px;
+            }
+        }
+        // 目前停留的 sideBar 選項
+        .itemBox__title.active,
+        .itemBox__listItem.active {
+            /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&0.6+0,0+100 */
+            background: -moz-linear-gradient(left, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 100%);
+            /* FF3.6-15 */
+            background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 100%);
+            /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to right, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 100%);
+            /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: ( startColorstr='#99ffffff', endColorstr='#00ffffff', GradientType=1);
+            /* IE6-9 */
+        }
+        // 小選項們
+        .itemBox__listItem {
+            padding-left: 31px;
+            height: 50px;
+            line-height: 50px;
+            .listItem__span {
+                cursor: pointer;
+                transition: all .3s;
+                &:hover {
+                    color: $SecondaryPrimary;
+                }
+            }
+        }
+        // 最後一個選項
+        .itemBox__lastListItem {
+            margin-bottom: 46px;
+        }
+    }
+}
+
+// 隱藏 sideBar 的 CSS
+.hidden {
+    transform: translateX(-127px);
+}
