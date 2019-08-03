@@ -8,4 +8,4 @@
 
 2 Week - SOLITAIRE(接龍) <a href="https://rexhung0302.github.io/The-F2E-Challenge/solitaire/dist/index.html#/index">DOMO</a>、<a href="https://github.com/RexHung0302/The-F2E-Challenge/tree/master/solitaire">Code Source</a>
 
-3 Week - MP3Player(接龍) <a href="https://rexhung0302.github.io/The-F2E-Challenge/mp3player/dist/index.html#/index">DOMO</a>、<a href="https://github.com/RexHung0302/The-F2E-Challenge/tree/master/mp3player">Code Source</a>
+3 Week - MP3Player(音樂播放器) <a href="https://rexhung0302.github.io/The-F2E-Challenge/mp3player/dist/index.html#/index">DOMO</a>、<a href="https://github.com/RexHung0302/The-F2E-Challenge/tree/master/mp3player">Code Source</a>
