@@ -5,6 +5,10 @@
     color: $Primary;
     transition: all .5s;
     transform: translateX(0px);
+    a {
+        color: $Primary;
+        text-decoration: none;
+    }
     // 漢堡鈕
     .hamburgerBtn {
         right: 10px;

@@ -8,7 +8,8 @@
         button.profile__logOutBtn 登出
       .sideBar__itemBox.position-relative.w-100.text-left
         .itemBox__title(:class="{ active: nowSelect === 'index'}")
-          span.title__span.cursor-pointer(@click="nowSelect = 'index'") 首頁
+          router-link(to="/taiwansongking/home/index")
+            span.title__span.cursor-pointer(@click="nowSelect = 'index'") 首頁
         .itemBox__title
           span.title__span 音樂庫 
         .itemBox__listItem(:class="{ active: nowSelect === 'songList'}")
@@ -16,7 +17,8 @@
           span.listItem__span(@click="nowSelect = 'songList'") 你的歌單
         .itemBox__listItem(:class="{ active: nowSelect === 'search'}")
           font-awesome-icon.mr-2(:icon="['fa', 'search']")
-          span.listItem__span(@click="nowSelect = 'search'") 搜尋歌曲
+          router-link(to="/taiwansongking/home/search")
+            span.listItem__span(@click="nowSelect = 'search'") 搜尋歌曲
         .itemBox__listItem.itemBox__lastListItem(:class="{ active: nowSelect === 'hotSong'}")
           font-awesome-icon.mr-2(:icon="['fa', 'music']")
           span.listItem__span(@click="nowSelect = 'hotSong'") 熱門點播   

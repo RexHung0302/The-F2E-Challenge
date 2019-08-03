@@ -30,3 +30,7 @@ body {
 .cursor-pointer {
     cursor: pointer;
 }
+
+input:focus,
+select:focus,
+button:focus{outline:none};
