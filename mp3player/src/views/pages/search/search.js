@@ -1,8 +1,8 @@
-import headerPart from '@/components/partial/headerPart.vue';
+import headerPlayer from '@/components/playerPart/headerPlayer.vue';
 
 export default {
     name: 'search',
     components: {
-        headerPart
+        headerPlayer
     }
 }

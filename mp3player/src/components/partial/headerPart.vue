@@ -6,11 +6,12 @@
       .searchRow.no-gutters.d-flex.justify-content-center
         .searchRow__selectBox.text-right
           select.searchRow__select
-            option 1
+            option(v-for="system in systems" :key="system.id") {{ system.item }}
         .searchRow__inputBox
           input.searchRow__input(placeHolder="輸入關鍵字搜尋")
         .searchRow__buttonBox.text-left
-          button.searchRow__button.rounded-circle OK   
+          button.searchRow__button.rounded-circle
+            font-awesome-icon.searchRow__button-icon(:icon="['fa', 'search']") 
 
 </template>
 
@@ -20,6 +21,14 @@ export default {
   data(){
     return {
       titleLogo: null,
+      systems: [
+        {'id':'1','item':'全部'},
+        {'id':'2','item':'銀櫃'},
+        {'id':'3','item':'好樂迪'},
+        {'id':'4','item':'音圓'},
+        {'id':'5','item':'點將'},
+        {'id':'6','item':'金影'}
+        ]
     }
   },
   mounted(){
@@ -30,44 +39,4 @@ export default {
 </script>
 
 
-<style lang="scss">
-.header {
-  padding-bottom: 67px;
-  // 頂部的 logo
-  &__titleLogo {
-    margin-top: 40px;
-    padding-bottom: 40.85px;
-  }
-  // 搜尋的那條
-  &__searchBox {
-      .searchRow {
-        height: 45px;
-        &__selectBox {
-          .searchRow__select{
-            border-radius: 23px;
-            border: 2px solid #619CFF;
-            width: 150px;
-            height: 100%;
-          }
-        }
-        &__inputBox {
-          padding: 0 11px 0 20px;
-          .searchRow__input{
-            border-radius: 23px;
-            border: 2px solid #619CFF;
-            padding-left: 20px; 
-            width: 300px;
-            height: 100%;
-          }
-        }
-        &__buttonBox {
-          .searchRow__button{
-            width: 45px;
-            height: 100%;
-          }
-        }  
-      }
-  }
-}
-
-</style>
+<style lang="scss"></style>

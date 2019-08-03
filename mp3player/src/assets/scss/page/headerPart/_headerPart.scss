@@ -1,0 +1,49 @@
+.header {
+    padding-bottom: 67px;
+    // 頂部的 logo
+    &__titleLogo {
+        margin-top: 40px;
+        padding-bottom: 40.85px;
+    }
+    // 搜尋的那條
+    &__searchBox {
+        .searchRow {
+            height: 45px;
+            &__select {
+                appearance: none;
+                -moz-appearance: none;
+                -webkit-appearance: none;
+                padding-right: 14px;
+                background: url("http://ourjs.github.io/static/2015/arrow.png") no-repeat scroll right center transparent;
+                padding: 0 20px;
+            }
+            &__selectBox {
+                .searchRow__select {
+                    border-radius: 23px;
+                    border: 2px solid #619CFF;
+                    width: 150px;
+                    height: 100%;
+                }
+            }
+            &__inputBox {
+                padding: 0 11px 0 20px;
+                .searchRow__input {
+                    border-radius: 23px;
+                    border: 2px solid $SecondaryColor;
+                    padding-left: 20px;
+                    width: 300px;
+                    height: 100%;
+                }
+            }
+            &__buttonBox {
+                .searchRow__button {
+                    width: 45px;
+                    height: 100%;
+                    .searchRow__button-icon {
+                        color: $SecondaryColor;
+                    }
+                }
+            }
+        }
+    }
+}

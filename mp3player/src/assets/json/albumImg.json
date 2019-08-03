@@ -1,12 +1,12 @@
 [
-    {"id":1,"fileName":"Hot song_01","albumName":"光年之外","singer":"鄧紫棋"},
-    {"id":2,"fileName":"Hot song_02","albumName":"怪美的","singer":"鄧紫棋"},
-    {"id":3,"fileName":"Hot song_03","albumName":"倒數","singer":"鄧紫棋"},
-    {"id":4,"fileName":"Hot song_04","albumName":"頑固","singer":"鄧紫棋"},
-    {"id":5,"fileName":"Hot song_05","albumName":"飄向北方","singer":"鄧紫棋"},
-    {"id":6,"fileName":"Hot song_06","albumName":"告白氣球","singer":"鄧紫棋"},
-    {"id":7,"fileName":"Hot song_07","albumName":"光年之外","singer":"鄧紫棋"},
-    {"id":8,"fileName":"Hot song_08","albumName":"光年之外","singer":"鄧紫棋"},
-    {"id":9,"fileName":"Hot song_09","albumName":"光年之外","singer":"鄧紫棋"},
-    {"id":10,"fileName":"Hot song_10","albumName":"光年之外","singer":"鄧紫棋"}
+    { "id": 1, "fileName": "Hot song_01", "albumName": "光年之外", "singer": "鄧紫棋" },
+    { "id": 2, "fileName": "Hot song_02", "albumName": "怪美的", "singer": "蔡依林" },
+    { "id": 3, "fileName": "Hot song_03", "albumName": "倒數", "singer": "鄧紫棋" },
+    { "id": 4, "fileName": "Hot song_04", "albumName": "頑固", "singer": "五月天" },
+    { "id": 5, "fileName": "Hot song_05", "albumName": "飄向北方", "singer": "黃明志、王力宏" },
+    { "id": 6, "fileName": "Hot song_06", "albumName": "告白氣球", "singer": "周杰倫" },
+    { "id": 7, "fileName": "Hot song_07", "albumName": "來自天堂的魔鬼", "singer": "鄧紫棋" },
+    { "id": 8, "fileName": "Hot song_08", "albumName": "有一種悲傷", "singer": "A-Lin" },
+    { "id": 9, "fileName": "Hot song_09", "albumName": "派對動物", "singer": "五月天" },
+    { "id": 10, "fileName": "Hot song_10", "albumName": "玫瑰少年", "singer": "蔡依林" }
 ]

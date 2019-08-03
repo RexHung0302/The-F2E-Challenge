@@ -1,16 +1,16 @@
 import headerPart from '@/components/partial/headerPart.vue';
 
-export default{
+export default {
     name: 'index',
-    components:{
+    components: {
         headerPart,
     },
-    data(){
+    data() {
         return {
             albumImg: null,
         }
     },
-    mounted(){
+    mounted() {
         // 到 store 取得專輯的照片
         this.albumImg = this.$store.state.albumImg;
     },

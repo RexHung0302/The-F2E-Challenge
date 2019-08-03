@@ -1,0 +1,36 @@
+.index {
+    padding: 0 43px;
+    .content {
+        &__title {
+            .title__text {
+                padding-bottom: 40px;
+            }
+        }
+        &__body {
+            .albumBox {
+                width: 180px;
+                margin-bottom: 31px;
+                &__imgBox {
+                    overflow: hidden;
+                    .albumBox__img {
+                        transition: all .3s;
+                        transform: scale(1);
+                        cursor: pointer;
+                        &:hover {
+                            transform: scale(1.2);
+                        }
+                        &:active {
+                            transform: scale(1);
+                        }
+                    }
+                }
+                &__albumName {
+                    font-size: 16px;
+                }
+                &__albumSinger {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}
