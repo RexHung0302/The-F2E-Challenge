@@ -26,13 +26,13 @@
           span.title__span 關注我們
         .itemBox__listItem(:class="{ active: nowSelect === 'youtube'}")
           font-awesome-icon.mr-2(:icon="['fab', 'youtube']")
-          span.listItem__span(@click="nowSelect = 'youtube'") Youtube
+          span.listItem__span(@click="nowSelect = 'youtube', jumpToOtherPlace('youtube')") Youtube
         .itemBox__listItem(:class="{ active: nowSelect === 'facebook'}")
           font-awesome-icon.mr-2(:icon="['fab', 'facebook']")
-          span.listItem__span(@click="nowSelect = 'facebook'") Facebook
+          span.listItem__span(@click="nowSelect = 'facebook', jumpToOtherPlace('facebook')") Facebook
         .itemBox__listItem(:class="{ active: nowSelect === 'github'}")
           font-awesome-icon.mr-2(:icon="['fab', 'github']")
-          span.listItem__span(@click="nowSelect = 'github'") GitHub
+          span.listItem__span(@click="nowSelect = 'github', jumpToOtherPlace('GitHub')") GitHub
         .itemBox__listItem(:class="{ active: nowSelect === 'share'}")
           font-awesome-icon.mr-2(:icon="['fa', 'share']")
           span.listItem__span(@click="nowSelect = 'share'") 分享        
@@ -52,6 +52,25 @@ export default {
     // 到 store 取得左側使用者頭像
     this.profileImg = this.$store.state.profileImg;
   },
+  methods:{
+    // 跳轉至其他網站
+    jumpToOtherPlace: function(type) {
+      // 判斷點選的是哪一個地方
+      switch(type){
+        case 'youtube':
+          window.location.href='https://www.youtube.com/';
+          break;
+        case 'facebook':
+          window.location.href='https://www.facebook.com/groups/173311386703334/?epa=SEARCH_BOX';
+          break;
+        case 'GitHub':
+          window.location.href='https://github.com/RexHung0302/The-F2E-Challenge';
+          break;
+          break;   
+      }
+      
+    }
+  }
 }
 </script>
 
