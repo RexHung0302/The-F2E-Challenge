@@ -66,7 +66,6 @@ export default {
         case 'GitHub':
           window.location.href='https://github.com/RexHung0302/The-F2E-Challenge';
           break;
-          break;   
       }
       
     }
