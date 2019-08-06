@@ -1,0 +1,92 @@
+.steptwo {
+    padding: 20px 30px;
+    .payInfoBox__leftPart {
+        margin: 0 auto;
+        padding: 20px;
+        box-shadow: 0 0 5px 0px #000;
+        .goodsTotalPrice__span {
+            font-size: 26px;
+            color: #1a2930;
+        }
+    }
+    .payInfoBox__rightPart {
+        margin: 0 auto;
+        padding: 20px;
+        box-shadow: 0 0 5px 0px #000;
+        .paymentItem {
+            &__box {
+                background-color: #efefef;
+                padding: 20px;
+                cursor: pointer;
+                transition: all .3s;
+                transform: scale(1);
+                &:hover {
+                    background-color: #1a2930;
+                    color: white;
+                    transform: scale(1.1);
+                }
+                &:active {
+                    transform: scale(1);
+                }
+            }
+            .active {
+                transition: all .3s;
+                background-color: #1a2930;
+                color: #fff;
+            }
+            &__img {
+                margin: 0 auto;
+            }
+        }
+    }
+    .rightPart__profileInfo {
+        &-cardRow {
+            .cardRow__input {
+                color: #707070;
+                background-color: #efefef;
+                border: none;
+                width: 54px;
+                margin-right: 10px;
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+        &-nameRow {
+            .nameRow__input {
+                color: #707070;
+                background-color: #efefef;
+                border: none;
+            }
+        }
+        &-cardDateRow {
+            .cardDateRow__input {
+                color: #707070;
+                background-color: #efefef;
+                border: none;
+                width: 40px;
+            }
+        }
+        &-safeNumRow {
+            .safeNumRow__input {
+                color: #707070;
+                background-color: #efefef;
+                border: none;
+                width: 48px;
+            }
+        }
+        &-remindBoxRow {
+            .remindBoxRow__span {
+                vertical-align: middle;
+            }
+        }
+    }
+    .payInfoBox__buttonPart {
+        padding: 20px;
+        margin: 0 auto;
+        .button {
+            background-color: #1a2930;
+            color: #fff;
+        }
+    }
+}

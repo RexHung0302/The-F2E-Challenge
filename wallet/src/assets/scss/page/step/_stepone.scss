@@ -1,0 +1,19 @@
+.stepone {
+    &__infoBox {
+        width: 800px;
+        margin: 0 auto;
+        padding: 20px 30px;
+        box-shadow: 0 0 5px 0px #000;
+        .infoBox__hr {
+            border: 2px solid #ccc;
+        }
+    }
+    &__buttonBox {
+        width: 800px;
+        margin: 40px auto;
+        .button {
+            background-color: #1a2930;
+            color: #fff;
+        }
+    }
+}

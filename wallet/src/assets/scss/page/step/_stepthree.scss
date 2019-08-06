@@ -1,0 +1,22 @@
+.stepthree {
+    padding: 20px 30px;
+    &__finishBox {
+        width: 873px;
+        padding: 20px;
+        margin: 0 auto;
+        box-shadow: 0 0 5px 0px #000;
+        .finishBox__infoBox {
+            width: 350px;
+            margin: 0 auto;
+        }
+    }
+    &__buttonBox {
+        width: 873px;
+        margin: 0 auto;
+        padding: 20px;
+        .button {
+            background-color: #1a2930;
+            color: #fff;
+        }
+    }
+}
