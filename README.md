@@ -11,3 +11,5 @@
 3 Week - MP3Player(音樂播放器) <a href="https://rexhung0302.github.io/The-F2E-Challenge/mp3player/dist/index.html#/index">DOMO</a>、<a href="https://github.com/RexHung0302/The-F2E-Challenge/tree/master/mp3player">Code Source</a>
 
 4 Week - Wallet(線上支付) <a href="https://rexhung0302.github.io/The-F2E-Challenge/wallet/dist/index.html#/index">DOMO</a>、<a href="https://github.com/RexHung0302/The-F2E-Challenge/tree/master/wallet">Code Source</a>
+
+5 Week - NinetyChallengeGame(90秒遊戲挑戰) <a href="https://rexhung0302.github.io/The-F2E-Challenge/NinetyChallengeGame/index">DOMO</a>、<a href="https://github.com/RexHung0302/The-F2E-Challenge/tree/master/NinetyChallengeGame">Code Source</a>
