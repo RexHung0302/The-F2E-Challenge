@@ -20,7 +20,7 @@ p.s: vue-fontAwesome 真的超難用！
 ### 安裝
 ```
 1. $ Git Clone
-2. $ cd The-F2E-Challenge/solitaire
+2. $ cd The-F2E-Challenge/mp3player
 3. $ npm install or $ yarn install
 4. $ npm run serve or $ yarn serve
 ```

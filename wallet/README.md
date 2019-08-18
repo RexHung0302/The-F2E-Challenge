@@ -26,7 +26,7 @@ p.s: 這次 CSS 寫得好亂，取名要再加把勁了!
 ### 安裝
 ```
 1. $ Git Clone
-2. $ cd The-F2E-Challenge/solitaire
+2. $ cd The-F2E-Challenge/wallet
 3. $ npm install or $ yarn install
 4. $ npm run serve or $ yarn serve
 ```
