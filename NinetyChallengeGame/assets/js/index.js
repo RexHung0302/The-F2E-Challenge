@@ -10,12 +10,12 @@ const config = {
             gravity: {
                 y: 1500
             },
-            debug: true
+            // debug: true
         },
     },
     scene: [
-        gamePlay,
         gameStart,
+        gamePlay,
     ]
 }
 
