@@ -1,4 +1,4 @@
-# 第三週 - HotelsBooking 旅館預約服務
+# 第六週 - HotelsBooking 旅館預約服務
 
 ### 範例
 
