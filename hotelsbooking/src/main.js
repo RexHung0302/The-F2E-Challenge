@@ -7,10 +7,10 @@ import store from './assets/sotre/store'
 // font-awesome
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faFacebook, faInstagram, faGithub } from '@fortawesome/free-brands-svg-icons'
-import { faUserSecret } from '@fortawesome/free-solid-svg-icons'
+import { faFan } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
-library.add(faUserSecret, faFacebook, faInstagram, faGithub)
+library.add(faFan, faFacebook, faInstagram, faGithub)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 

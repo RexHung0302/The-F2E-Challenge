@@ -9,11 +9,14 @@
                 router-link(to="/hotelsbooking/index/aboutus")
                     span.itemPart__span.cursor-pointer ABOUT US
             .col.itemPart__roomBox.text-center
-                span.itemPart__span.cursor-pointer(href="#") ROOMS
+                router-link(to="/hotelsbooking/rooms")
+                    span.itemPart__span.cursor-pointer ROOMS
             .col.itemPart__contactBox.text-center
-                span.itemPart__span.cursor-pointer(href="#") CONTACT
+                router-link(to="/hotelsbooking/contact")
+                    span.itemPart__span.cursor-pointer CONTACT
             .col.itemPart__booknowBox.text-center
-                button.itemPart__btn.btn BOOK NOW
+                router-link(to="/hotelsbooking/booknow")
+                    button.itemPart__btn.btn BOOK NOW
             .col.itemPart__selectBox.text-center
                 select.itemPart__select
                     option EL

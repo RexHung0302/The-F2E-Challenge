@@ -1,6 +1,6 @@
 <template lang="pug">
-    .index.position-relative.w-100.h-100
-        .index__titlePart.position-relative
+    .index.position-relative.w-100
+        .index__titlePart.position-relative.h-100
             transition-group(tag="div" name="fade" class="animateBox position-relative")
                 img.img-fluid.titlePart__showImg.w-100(v-for="(src, index) in allRoomImg" :key="src" :src="src" v-show="index === nowImgActive")
             .lastPageBtn.rounded-circle.position-absolute(@click="changePage(nowImgActive - 1)")
