@@ -1,7 +1,6 @@
 <template lang="pug">
   .404page.position-relative
-    img.mt-5(src="@/assets/img/404.png")
-    p.mt-5.font-weight-bold.title 404 Not Found.
+    img(src="@/assets/img/404error.png")
 </template>
 
 <script>
