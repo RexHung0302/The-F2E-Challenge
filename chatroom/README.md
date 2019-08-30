@@ -2,7 +2,7 @@
 
 ### 範例
 
-[DOMO](https://rexhung0302.github.io/The-F2E-Challenge/chatroom/dist/index.html#/chatroom/index)
+[DOMO](https://rexhung0302.github.io/The-F2E-Challenge/chatroom/dist/index.html#/login)
 
 ### 心得
 上週看到題目心想完蛋啦，連 firebase 都沒碰過根本不知道怎麼實作聊天室出來，還好這週也是刻板練習，原本想藉這機會去找找 websocket 相關文章來讀，沒想到工作上太忙了，只好留著之後慢慢學了，這次主要還是在 VueX 的練習，拖到禮拜五晚上才動工，切到有點頭昏腦脹；接下來不知道下週的雲端上傳會不會很難寫。
