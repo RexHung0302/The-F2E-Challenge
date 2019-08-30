@@ -15,7 +15,6 @@ export default {
         // 打Api
         axios({ method: 'get', url: `${allRoomURL}`, headers: { Authorization: `Bearer ${token}` } }).then((res) => {
             if (res) {
-                console.log(res.data);
                 // 將所有房源丟到 state
                 vm.$store.commit('setApi', res.data);
 
