@@ -1,2 +1,2 @@
 (window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["message"],{"22af":function(e,s,a){"use strict";a.r(s);var n=function(){var e=this,s=e.$createElement,a=e._self._c||s;return a("div",{staticClass:"message position-relative w-100 h-100"},[a("spna",[e._v("This is a message.")])],1)},t=[],i={name:"message",data:function(){return{}}},r=i,c=a("2877"),o=Object(c["a"])(r,n,t,!1,null,"09d3b09a",null);s["default"]=o.exports}}]);
-//# sourceMappingURL=message.26edc7f6.js.map
+//# sourceMappingURL=message.b5314051.js.map

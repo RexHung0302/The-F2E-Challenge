@@ -14,7 +14,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.10.2",
     "@fortawesome/vue-fontawesome": "^0.1.6",
     "animate.css": "^3.7.2",
-    "core-js": "^2.6.5",
+    "core-js": "^2.6.9",
     "eslint-utils": "^1.4.2",
     "node-sass": "^4.12.0",
     "pug": "^2.0.4",
