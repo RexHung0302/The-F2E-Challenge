@@ -1,0 +1,67 @@
+/* 共同 Class & 全域 CSS */
+
+html,
+body {
+    position: relative;
+    width: 100%;
+    height: 100%!important;
+}
+
+#app {
+    height: 100vh;
+    background-color: $Primary;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+input:focus,
+select:focus,
+button:focus {
+    outline: none
+}
+
+.whiteRemind {
+    color: white;
+}
+
+@mixin darkenColorHover($color, $amount) {
+    color: darken($color, $amount)
+}
+
+@mixin darkenBgHover($color, $amount) {
+    background-color: darken($color, $amount)
+}
+
+.iconHover {
+    transition: all .3s;
+    &:hover {
+        @include darkenColorHover(#fff, 40%);
+    }
+}
+
+.chartChannelHover {
+    transition: all .3s;
+    &:hover {
+        @include darkenBgHover(#3C1B49, 5%);
+    }
+    &:active {
+        box-shadow: 1px 1px 8px 3px rgba(148, 148, 189, 0.5) inset;
+    }
+}
+
+.swal2-height-auto {
+    height: 100%!important;
+}
+
+a {
+    text-decoration: none;
+    &:hover {
+        text-decoration: none;
+    }
+}
