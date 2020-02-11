@@ -2,7 +2,7 @@
 
 ### 範例
 
-[DOMO](https://rexhung0302.github.io/The-F2E-Challenge/masksMap/dist/index.html#/index)
+[DOMO](https://rexhung0302.github.io/The-F2E-Challenge/masks-map/dist/index.html#/masksMap/index)
 
 [BLOG](#)
 

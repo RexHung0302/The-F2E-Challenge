@@ -20,4 +20,4 @@
 
 8 Week - CloudStorage(雲端硬碟) <a href="https://rexhung0302.github.io/The-F2E-Challenge/cloudstorage/dist/index.html#/index">DOMO</a>、<a href="https://github.com/RexHung0302/The-F2E-Challenge/tree/master/cloudstorage">Code Source</a>
 
-10 Week - MasksMap(口罩地圖) <a href="https://rexhung0302.github.io/The-F2E-Challenge/masksMap/dist/index.html#/index">DOMO</a>、<a href="https://github.com/RexHung0302/The-F2E-Challenge/tree/master/masksmap">Code Source</a>
+10 Week - MasksMap(口罩地圖) <a href="https://rexhung0302.github.io/The-F2E-Challenge/masks-map/dist/index.html#/masksMap/index">DOMO</a>、<a href="https://github.com/RexHung0302/The-F2E-Challenge/tree/master/masksmap">Code Source</a>

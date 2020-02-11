@@ -1,6 +1,4 @@
 module.exports = {
-    lintOnSave: false,
-    css: {
-      modules: true
-    }
+    publicPath: '',
+    lintOnSave: false
 };
