@@ -1,0 +1,204 @@
+.sidePart {
+  // 上半部
+  .upPart {
+    padding: 8px 20px;
+    min-height: 136px;
+    font-size: 14px;
+    color: #FFFFFF;
+    background: url('~@/assets/images/sidePartBg.svg')no-repeat center;
+    // 星期幾
+    &__weekText {
+      font-size: 36px;
+    }
+    // 提醒文字
+    &__decText {
+      color: #000000;
+      background-color: rgb(255, 170, 114);
+    }
+    &__remindText {
+      font-size: 12px;
+      font-weight: 100;
+    }
+  }
+  // 下半部
+  .downPart {
+    height: 100%;
+    overflow-y: auto;
+    // 第一個搜索 Div
+    &__firstDiv {
+      padding: 16px 20px;
+      width: 100%;
+      border-bottom: 1px solid #EAEAEA;
+      background-color: #FFFFFF;
+      position: absolute;
+      top: auto;
+      height: 166px;
+      z-index: 100;
+      // 搜尋部分
+      .searchPart {
+        // 搜尋 Input
+        .serchInput {
+          box-shadow: 0px 0px 6px #00000029;
+          border-radius: 10px;
+          padding-right: 40px;
+        }
+        // 改變 placeholder 顏色
+        ::placeholder{
+          color: #CCCCCC!important;
+        }
+        // 搜尋 Icon
+        .searchIcon {
+          position: absolute;
+          top: 26px;
+          right: 36px;
+        }
+      }
+      // 條件部分
+      .selectPart {
+        padding-top: 16px;
+        font-size: 14px;
+        .conditionDiv {
+          display: inline-block;
+          margin-right: 6px;
+          // 每一個條件按鈕
+          &__label {
+            display: inline-block;
+            padding: 9px 14px;
+            color: #CCCCCC;
+            border-radius: 7px;
+            border: 1px solid #EAEAEA;
+          }
+          &:last-child {
+            margin-right: 0;
+          }
+          // 隱藏的 所有口罩 input
+          &__cheekBoxInput_1[type="checkbox"]{
+            &:checked + label {
+              background-color: #D65600;
+              color: #FFFFFF;
+            }
+          }
+          // 隱藏的 成人口罩 input
+          &__cheekBoxInput_2[type="checkbox"]{
+            &:checked + label {
+              background-color: #FF973B;
+              color: #FFFFFF;
+            }
+          }
+          // 隱藏的 兒童口罩 input
+          &__cheekBoxInput_3[type="checkbox"]{
+            &:checked + label {
+              background-color: #F8BE00;
+              color: #FFFFFF;
+            }
+          }
+        }
+      }
+      // 文字提醒部分
+      .remindPart {
+        color: #666666;
+        font-size: 14px;
+        &__storeNumberText {
+          color: #FF973B;
+          font-size: 20px;
+        }
+      }
+    }
+    // 其他藥局資訊及口罩資訊的 Div
+    &__storeDiv {
+      padding: 12px 20px;
+      line-height: 1.5rem;
+      border-bottom: 1px solid #EAEAEA;
+      transition: all .3s;
+      // 有兒童口罩
+      &-hasChildMasks::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 20px;
+        height: 20px;
+        border-bottom: 20px solid white;
+        border-right: 20px solid #F8BE00;
+        display: inline-block;
+        transform: rotate(-90deg);
+      }
+      // 有成人口罩
+      &-hasAdultMasks::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 20px;
+        height: 20px;
+        border-bottom: 20px solid white;
+        border-right: 20px solid #FF973B;
+        display: inline-block;
+        transform: rotate(-90deg);
+      }
+      // 第一個藥局要跟上面分離
+      &:first-child {
+        margin-top: 166px;
+      }
+      &:hover {
+        background-color: #efefef;
+      }
+      &-hasChildMasks:hover::after {
+        border-bottom: 20px solid #efefef;
+      }
+      &-hasAdultMasks:hover::after {
+        border-bottom: 20px solid #efefef;
+      }
+      // 藥局資訊 Div
+      .storeInfoPart {
+        .storeName {
+          font-size: 16px;
+          font-weight: bold;
+        }
+        .storeAddress {
+          font-size: 14px;
+        }
+        .storePhone {
+          font-size: 14px;
+        }
+        .storeTime {
+          font-size: 12px;
+        }
+        .moreInfo {
+          font-size: 12px;
+        }
+      }
+      // 藥局口罩資訊 Div
+      .storeMasksInfoPart {
+        .storeMasksInfoDiv {
+          display: inline-block;
+          border-radius: 10px;
+          margin-right: 8px;
+          padding: 8px;
+          font-size: 14px;
+          &:last-child {
+            margin-right: 0;
+          }
+          &-adult {
+            background: rgb(255, 230, 212);
+            color: #FF973B;
+          }
+          &-child {
+            background: rgb(255, 246, 216);
+            color: #F8BE00;
+          }
+          &-none {
+            background: rgb(248, 248, 248);
+            color: #CCCCCC;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+// 第二欄開始的藥局資訊要跟上面搜尋欄位分開
+.sidePart .downPart > div:nth-child(2) {
+  margin-top: 166px;
+}

@@ -1,0 +1,21 @@
+.masksMap {
+  overflow: hidden;
+  .contentDiv {
+    display: flex;
+    justify-content: flex-end;
+    .sidePartDiv {
+      width: 315px;
+      max-width: 315px;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      overflow-x: hidden;
+      overflow-y: hidden;
+    }
+    .mainPartDiv {
+      overflow: hidden;
+      width: calc(100% - 315px);
+    }
+  }
+}
