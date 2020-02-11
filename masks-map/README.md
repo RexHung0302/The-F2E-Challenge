@@ -4,7 +4,7 @@
 
 [DOMO](https://rexhung0302.github.io/The-F2E-Challenge/masks-map/dist/index.html#/masksMap/index)
 
-[BLOG](#)
+[BLOG](https://rexhung0302.github.io/2020/02/12/20200212/)
 
 ### 心得
 過年前開始武漢肺炎突然肆虐，突然間口罩都被搶購一空，這段時間武漢肺癌一直是人們最常談到的話題，也讓你開始知道很多事情其實離你並不遠。
