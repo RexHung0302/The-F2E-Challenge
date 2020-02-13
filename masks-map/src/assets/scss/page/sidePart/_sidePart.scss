@@ -1,4 +1,18 @@
 .sidePart {
+  height: 100%;
+  transition: all .5s;
+  // 放左邊的Icon
+  .icon-arrowLeft {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    right: 10px;
+    top: 10px;
+    z-index: 15;
+    transition: all .8s;
+  }
   // 上半部
   .upPart {
     padding: 8px 20px;
@@ -6,6 +20,7 @@
     font-size: 14px;
     color: #FFFFFF;
     background: url('~@/assets/images/sidePartBg.svg')no-repeat center;
+    background-size: cover;
     // 星期幾
     &__weekText {
       font-size: 36px;
@@ -201,4 +216,15 @@
 // 第二欄開始的藥局資訊要跟上面搜尋欄位分開
 .sidePart .downPart > div:nth-child(2) {
   margin-top: 166px;
+}
+
+
+@media all and (max-width: 700px) {
+  .sidePart .downPart__firstDiv {
+    position: relative;
+  }
+
+  .sidePart .downPart > div:nth-child(2) {
+    margin-top: 0;
+  }
 }

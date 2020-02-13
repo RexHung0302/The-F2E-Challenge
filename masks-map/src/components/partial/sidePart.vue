@@ -1,6 +1,7 @@
 <template lang="pug">
-  .sidePart.position-relatuve.h-100
+  .sidePart.position-relatuve
     .upPart
+      img.icon.icon-arrowLeft(v-show="isPhone && windowWidth < 700 && !sideBarHidden", src="@/assets/images/arrowLeft.svg", @click="siderBarHandler('hidden')")
       span.d-block {{ new Date() | filterDate }}
       span.d-block.upPart__weekText {{ new Date() | filterWeek }}
       span.upPart__decText 
@@ -13,8 +14,8 @@
       .downPart__firstDiv
         //- 搜尋部分
         .searchPart
-          input.form-control.serchInput(placeholder="搜尋區域 , 地址 , 藥局", v-model.trim="keywordText", @keyup="searchHandle")
-          img.searchIcon.cursor-pointer(src="@/assets/images/Icon_search.svg")
+          input.form-control.serchInput(placeholder="搜尋區域 , 地址 , 藥局", v-model.trim="keywordText")
+          img.searchIcon.cursor-pointer(src="@/assets/images/Icon_search.svg", @click="searchHandle")
         //- 條件部分
         .selectPart
           .conditionDiv

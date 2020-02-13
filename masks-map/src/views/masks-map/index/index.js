@@ -19,6 +19,8 @@ export default {
   },
   data() {
     return {
+      // 視窗寬度
+      windowWidth: window.innerWidth,
       zoom: 17,
       url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
       attribution:
@@ -43,7 +45,6 @@ export default {
   methods: {
     // 顯示藥局詳細資訊
     showInfo: function(info) {
-      // console.log(info);
       Swal.fire({
         title: `${info.name} 詳細資訊`,
         html: `<div class="row" style="align-items: flex-start;">
@@ -115,7 +116,6 @@ export default {
     },
     // 設定目前位置
     onLocationFound(location) {
-      // console.log(location);
       let vm = this;
       let locationData = [
         location.latitude,
@@ -123,7 +123,11 @@ export default {
       ];
       // 設定位置
       vm.$store.dispatch('setCenterLoction', locationData);
-      
+    },
+    // sidebar 
+    siderBarHandler(type){
+      let vm = this;
+      vm.$store.commit('setSideBar', type);
     },
   },
   computed:{
@@ -131,6 +135,8 @@ export default {
       'masksApiData',
       'storeList',
       'center',
+      'isPhone',
+      'sideBarHidden',
     ]),
   },
 }

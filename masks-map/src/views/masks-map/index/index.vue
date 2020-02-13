@@ -2,7 +2,8 @@
   .mainPart.position-relative.h-100
     .mapDiv.position-relative
       div(style='height: 100%; width: 100%')
-        l-map(:zoom='zoom' :center='center' style='height: 100%' @ready="onReady" @locationfound="onLocationFound")
+        img.icon.icon-arrowRight(v-show="isPhone && windowWidth < 700 && sideBarHidden", src="@/assets/images/arrowRight.svg", @click="siderBarHandler('show')")
+        l-map(:zoom='zoom' :center='center' style='height: 100%' @ready="onReady" :useFlyTo="true" @locationfound="onLocationFound")
           l-tile-layer(:url='url' :attribution='attribution')
           l-marker-cluster
             //- Use default icon

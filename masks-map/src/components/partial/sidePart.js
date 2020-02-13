@@ -12,6 +12,8 @@ export default {
       keywordText: null,
       // 口罩條件
       maskCondition: [],
+      // 視窗寬度
+      windowWidth: window.innerWidth,
     }
   },
   filters: {
@@ -81,10 +83,15 @@ export default {
       }
     },
   },
+  mounted(){
+    /* 監聽改變瀏覽器寬度 */
+    window.addEventListener('resize', () => {
+      this.windowWidth = window.innerWidth;
+    });
+  },
   methods: {
     // 顯示藥局詳細資訊
     showInfo: function(info) {
-      console.log(info);
       Swal.fire({
         title: `${info.name} 詳細資訊`,
         html: `<div class="row" style="align-items: flex-start;">
@@ -165,12 +172,19 @@ export default {
       let vm = this;
       // 設定目標位置
       vm.$store.dispatch('setCenterLoction', latLng);
-    }
+    },
+    // sidebar 
+    siderBarHandler(type){
+      let vm = this;
+      vm.$store.commit('setSideBar', type);
+    },
   },
   computed:{
     ...mapState([
       'masksApiData',
       'storeList',
+      'isPhone',
+      'sideBarHidden',
     ]),
   },
 }

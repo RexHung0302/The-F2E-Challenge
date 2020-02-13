@@ -4,6 +4,10 @@
     display: flex;
     justify-content: flex-end;
     .sidePartDiv {
+      z-index: 991;
+      background-color: #FFFFFF;
+      transition: all .5s;
+      height: 100%;
       width: 315px;
       max-width: 315px;
       position: absolute;
@@ -12,10 +16,31 @@
       left: 0;
       overflow-x: hidden;
       overflow-y: hidden;
+      &-hidden {
+        width: 0!important;
+      }
     }
     .mainPartDiv {
       overflow: hidden;
       width: calc(100% - 315px);
     }
+  }
+}
+
+@media all and (max-width: 700px) {
+  .masksMap .contentDiv {
+    display: block;
+  }
+
+  .masksMap .contentDiv .sidePartDiv {
+    width: 100%;
+    max-width: 100%;
+    position: fixed;
+    bottom: 0;
+    top: 0;
+  }
+
+  .masksMap .contentDiv .mainPartDiv {
+    width: 100%;
   }
 }

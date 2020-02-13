@@ -14,8 +14,30 @@ export default new Vuex.Store({
         masksApiData: [],
         storeList: [],                      // 藥局清單, 有做 filter 都會在這個 Data
         center: [24.1447929, 120.6361618],  // 目前中心位置
+        isPhone: false,                     // 是否是手機
+        sideBarHidden: null,               // 是否隱藏 SideBar
     },
     mutations: {
+        // 設定是不是手機
+        setIsPhone(state, booleanResult = true) {
+            state.isPhone = booleanResult;
+            if(booleanResult === true) {
+                state.sideBarHidden = true;
+            }
+        },
+        // SideBar Handler
+        setSideBar(state, type = 'hidden') {
+            switch(type) {
+                case 'hidden':
+                    state.sideBarHidden = true;
+                    break;
+                case 'show':
+                    state.sideBarHidden = false;
+                    break;
+                default:
+                    break;
+            }
+        },
         // 一開始取的口罩的API
         setMasksApiData(state, data = []) {
             let newArray = [];
@@ -165,6 +187,20 @@ export default new Vuex.Store({
         },
     },
     actions: {
+        // 檢查手機端還是電腦端
+        checkDevice({commit}){
+            let flag = navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i);
+            let booleanResult;
+
+
+            if(flag && flag !== null && flag.length > 0){
+                booleanResult = true
+            } else {
+                booleanResult = false;
+            }
+
+            commit('setIsPhone', booleanResult);
+        },
         // 取得口罩 API
         async getMasksApi({commit}){
             axios.get(masksApiURL)

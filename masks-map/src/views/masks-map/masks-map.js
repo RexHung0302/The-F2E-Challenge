@@ -1,3 +1,4 @@
+import { mapState } from 'vuex';
 const Swal = require('sweetalert2');
 
 // 引入 sidePart
@@ -18,6 +19,12 @@ export default {
         Swal.showLoading();
       }
     })
+    this.$store.dispatch('checkDevice');
     this.$store.dispatch('getMasksApi');
+  },
+  computed:{
+    ...mapState([
+      'sideBarHidden',
+    ]),
   },
 }
