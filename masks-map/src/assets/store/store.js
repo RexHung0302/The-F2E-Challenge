@@ -15,7 +15,8 @@ export default new Vuex.Store({
         storeList: [],                      // 藥局清單, 有做 filter 都會在這個 Data
         center: [24.1447929, 120.6361618],  // 目前中心位置
         isPhone: false,                     // 是否是手機
-        sideBarHidden: null,               // 是否隱藏 SideBar
+        sideBarHidden: null,                // 是否隱藏 SideBar
+        zoom: 10,                           // 地圖的縮放比
     },
     mutations: {
         // 設定是不是手機
@@ -184,6 +185,7 @@ export default new Vuex.Store({
         // 更改中心位置
         setCenterLoction(state, input = [24.1447929, 120.6361618]) {
             state.center = [input[0], input[1]];
+            state.zoom = 17;
         },
     },
     actions: {

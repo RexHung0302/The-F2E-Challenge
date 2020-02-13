@@ -21,7 +21,6 @@ export default {
     return {
       // 視窗寬度
       windowWidth: window.innerWidth,
-      zoom: 10,
       url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
       attribution:
         '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
@@ -132,6 +131,7 @@ export default {
   },
   computed:{
     ...mapState([
+      'zoom',
       'masksApiData',
       'storeList',
       'center',
