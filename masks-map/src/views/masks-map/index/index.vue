@@ -7,7 +7,7 @@
           l-tile-layer(:url='url' :attribution='attribution')
           l-marker-cluster
             //- Use default icon
-            l-marker(v-for="(store,index) in storeList" :lat-lng="store.geometry.coordinates" :icon="store.properties.mask_adult !== 0 || store.properties.mask_child !== 0 ? (store.properties.mask_adult > 0 && store.properties.mask_child > 0 ? icon_hasAllMask : icon_onlyOneMask ) : icon_noMask"  :key="store.properties.id" :visible="true")
+            l-marker(v-for="(store,index) in masksApiData" :lat-lng="store.geometry.coordinates" :icon="store.properties.mask_adult !== 0 || store.properties.mask_child !== 0 ? (store.properties.mask_adult > 0 && store.properties.mask_child > 0 ? icon_hasAllMask : icon_onlyOneMask ) : icon_noMask"  :key="store.properties.id" :visible="true")
               l-popup
                 span.d-block.storeName(style="font-size:16px;font-weight: bold;") {{ store.properties.name }}
                 span.d-block.storeAddress.mt-2(style="font-size:12px;") {{ store.properties.address }}
