@@ -15,15 +15,14 @@ export default {
     LMarker,
     LPopup,
     LTooltip,
-    lMarkerCluster: Vue2LeafletMarkerCluster,
+    'l-marker-cluster': Vue2LeafletMarkerCluster,
   },
   data() {
     return {
       // 視窗寬度
       windowWidth: window.innerWidth,
       url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-      attribution:
-        '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+      attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
       icon_hasAllMask: L.icon({
         iconUrl: require("@/assets/images/Icon_location_green.svg"),
         iconSize: [70, 100],
@@ -110,7 +109,7 @@ export default {
       });
     },
     // 取得位置同意
-    onReady (mapObject) {
+    onReady(mapObject) {
       mapObject.locate();
     },
     // 設定目前位置
@@ -124,12 +123,12 @@ export default {
       vm.$store.dispatch('setCenterLoction', locationData);
     },
     // sidebar 
-    siderBarHandler(type){
+    siderBarHandler(type) {
       let vm = this;
       vm.$store.commit('setSideBar', type);
     },
   },
-  computed:{
+  computed: {
     ...mapState([
       'zoom',
       'masksApiData',

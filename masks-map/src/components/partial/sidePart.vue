@@ -1,5 +1,5 @@
 <template lang="pug">
-  .sidePart.position-relatuve
+  .sidePart.position-relative
     .upPart
       img.icon.icon-arrowLeft(v-show="isPhone && windowWidth < 700 && !sideBarHidden", src="@/assets/images/arrowLeft.svg", @click="siderBarHandler('hidden')")
       span.d-block {{ new Date() | filterDate }}
@@ -8,7 +8,16 @@
         | 身分證末一碼 
         span.redRemind {{ new Date() | filterEvenOdd }} 
         | 字號者可購買口罩
-      small.d-block.upPart__remindText ※一週限購一次，每次一人限購兩片
+      .remindTextBox
+        small.d-block.upPart__remindText ※成人口罩
+          .redRemind.d-inline-block.font-weight-bold 七天
+          | 限購一次，每次一人限購
+          .redRemind.d-inline-block.font-weight-bold 三片
+        small.d-block.upPart__remindText ※兒童口罩
+          .redRemind.d-inline-block.font-weight-bold 七天
+          | 限購一次，每次一人限購
+          .redRemind.d-inline-block.font-weight-bold 五片
+          | (十六歲以下)
     .downPart
       //- 第一欄為搜尋欄位
       .downPart__firstDiv
